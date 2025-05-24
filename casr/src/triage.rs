@@ -1,8 +1,8 @@
 //! Post-fuzzing crash analysis module: create, deduplicate, cluster CASR reports
 //! and print overall summary.
 use crate::{
+    casr,
     mode::Mode,
-    run,
     util::{get_path, initialize_dirs, log_progress},
 };
 
@@ -72,7 +72,7 @@ impl<'a> CrashInfo {
         }
 
         debug!("{:?}", args);
-        let result = run::casr(&args, Some(self.mode.clone()));
+        let result = casr::casr(&args, Some(self.mode.clone()));
         if let Err(err) = result {
             let err = err.to_string();
             if err.contains("Timeout") {

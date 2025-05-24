@@ -1,9 +1,9 @@
-use casr::run;
+use casr::casr;
 
 use anyhow::Result;
 
 use std::env;
 
 fn main() -> Result<()> {
-    run::casr(&env::args().collect::<Vec<String>>(), None)
+    casr::casr(&env::args().collect::<Vec<String>>(), None)
 }

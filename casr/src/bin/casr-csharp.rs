@@ -1,7 +1,7 @@
-use casr::{mode::Mode, stub};
+use ::casr::{casr, mode::Mode};
 
 use anyhow::Result;
 
 fn main() -> Result<()> {
-    stub::stub(Mode::Csharp)
+    casr::stub(Mode::Csharp)
 }
