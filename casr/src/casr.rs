@@ -1,8 +1,5 @@
-use crate::{common, run, mode::Mode, util};
-use libcasr::{
-    report::CrashReport,
-    stacktrace::CrashLine,
-};
+use crate::{common, mode::Mode, run, util};
+use libcasr::{report::CrashReport, stacktrace::CrashLine};
 
 use std::env;
 use std::path::PathBuf;

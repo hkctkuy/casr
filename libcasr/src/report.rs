@@ -31,7 +31,7 @@ use serde::{Deserialize, Serialize};
 /// Represents the information about program termination.
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 #[derive(Default, Clone, Debug)]
-pub struct CrashReport {
+pub struct CasrReport {
     /// Pid of crashed process.
     #[cfg_attr(feature = "serde", serde(skip))]
     pub pid: i32,
@@ -265,8 +265,11 @@ pub struct CrashReport {
     pub source: Vec<String>,
 }
 
-impl CrashReport {
-    /// Create new `CrashReport`
+/// Type alias for `CasrReport` for backward capability.
+pub type CrashReport = CasrReport;
+
+impl CasrReport {
+    /// Create new `CasrReport`
     pub fn new() -> Self {
         let mut report: CrashReport = Default::default();
         let local: DateTime<Local> = Local::now();
